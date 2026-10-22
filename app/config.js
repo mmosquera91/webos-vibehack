@@ -4,6 +4,9 @@ window.CONFIG = {
   // Apps pinned to the dock row at the bottom, in this order. Missing apps are skipped.
   dockApps: ['netflix', 'cdp-30', 'com.crunchyroll.webapp', 'youtube.leanback.v4'],
 
+  // First apps of the grid, right below the dock, in this order. The rest follow alphabetically.
+  gridFirst: ['com.disney.disneyplus-prod', 'amazon', 'org.jellyfin.webos'],
+
   // Apps never shown as tiles (inputs and Live TV are already in the Inputs menu).
   hiddenApps: [
     'com.gathin.tvhome',

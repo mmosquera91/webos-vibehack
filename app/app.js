@@ -98,9 +98,14 @@
     (CONFIG.dockApps || []).forEach(function (id) {
       if (byId[id] && !hidden[id] && dock.length < COLUMNS) { dock.push(byId[id]); hidden[id] = true; }
     });
+    // Apps listed in gridFirst open the grid, in that order; the rest follow alphabetically.
+    var first = [];
+    (CONFIG.gridFirst || []).forEach(function (id) {
+      if (byId[id] && !hidden[id]) { first.push(byId[id]); hidden[id] = true; }
+    });
     var rest = all.filter(function (a) { return !hidden[a.id]; });
     rest.sort(byTitle);
-    return dock.concat(rest);
+    return dock.concat(first, rest);
   }
 
   var ORDER_KEY = 'tvhome.order';
